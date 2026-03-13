@@ -26,7 +26,7 @@
             line-height: 1.7;
         }
 
-        /* CABEÇALHO */
+        /* CABEÇALHO - ESTILO REFINADO */
         header {
             background-color: var(--azul-escuro);
             color: var(--white);
@@ -38,7 +38,7 @@
         header .brand-name { 
             font-weight: 400; 
             margin: 0; 
-            font-size: 12px; 
+            font-size: 11px; 
             text-transform: uppercase;
             letter-spacing: 4px;
             color: var(--azul-claro);
@@ -55,7 +55,7 @@
 
         header .subtitle { 
             font-weight: 300; 
-            font-size: 17px; 
+            font-size: 16px; 
             color: var(--champagne); 
             margin: 0; 
         }
@@ -225,35 +225,36 @@
             transition: all 0.3s;
         }
 
-        .written-question input:focus {
-            outline: none;
-            border-color: var(--bronze);
-            background-color: #fff;
-        }
-
         .suggestion {
             display: none;
             font-size: 14px;
             color: var(--bronze);
             margin-top: 8px;
             font-style: italic;
-            animation: fadeIn 0.3s ease;
         }
 
         /* SPEAKING */
+        .speaking-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
         .speaking-card {
             background-color: var(--off-white);
             border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 20px;
+            padding: 22px;
             border: 1px solid var(--azul-claro);
             display: flex;
             align-items: center;
             gap: 20px;
+            transition: transform 0.2s;
         }
 
-        .speaking-card .icon { font-size: 30px; color: var(--bronze); }
-        .speaking-card .question-text { font-size: 17px; font-weight: 700; color: var(--azul-escuro); }
+        .speaking-card:hover { transform: translateX(5px); border-color: var(--bronze); }
+
+        .speaking-card .icon { font-size: 28px; color: var(--bronze); min-width: 40px; text-align: center; }
+        .speaking-card .question-text { font-size: 16px; font-weight: 700; color: var(--azul-escuro); }
 
         /* QUIZ */
         .question-item {
@@ -261,7 +262,6 @@
             padding-bottom: 25px;
             border-bottom: 1px dashed var(--azul-claro);
         }
-        .question-item:last-child { border-bottom: none; }
         .option-list { list-style: none; padding: 0; margin: 0; }
         .option-list li { margin-bottom: 12px; }
         .option-list label {
@@ -327,7 +327,7 @@
                 <aside class="sidebar">
                     <h2 class="section-header-title">Shadowing Practice</h2>
                     <div class="box-info">
-                        <strong>Goal:</strong> Listen and repeat. Speak along with Garr to improve your rhythm.
+                        <strong>Goal:</strong> Listen and repeat. Speak along with Garr to improve your rhythm and flow.
                     </div>
                     <div class="video-wrapper">
                         <a href="https://www.youtube.com/watch?v=vIfu4eU9rQU" target="_blank" class="faux-player">
@@ -354,7 +354,7 @@
                 <aside class="sidebar">
                     <h2 class="section-header-title">Comprehension Quiz</h2>
                     <div class="box-info">
-                        <strong>Goal:</strong> Choose the correct facts about Garr's life.
+                        <strong>Goal:</strong> Test your knowledge about Garr's facts.
                     </div>
                     <div class="video-wrapper">
                         <a href="https://www.youtube.com/watch?v=vIfu4eU9rQU" target="_blank" class="faux-player">
@@ -375,7 +375,7 @@
                             </ul>
                         </div>
                         <div class="question-item">
-                            <span class="question-label">2. How many books did he write about presentations?</span>
+                            <span class="question-label">2. How many books did he write?</span>
                             <ul class="option-list">
                                 <li><label><input type="radio" name="q2" value="wrong"> 2 books</label></li>
                                 <li><label><input type="radio" name="q2" value="correct"> 5 books</label></li>
@@ -383,7 +383,7 @@
                             </ul>
                         </div>
                         <div class="question-item">
-                            <span class="question-label">3. What is Garr's main musical instrument?</span>
+                            <span class="question-label">3. What is Garr's main instrument?</span>
                             <ul class="option-list">
                                 <li><label><input type="radio" name="q3" value="wrong"> Piano</label></li>
                                 <li><label><input type="radio" name="q3" value="correct"> Drums</label></li>
@@ -391,11 +391,11 @@
                             </ul>
                         </div>
                         <div class="question-item">
-                            <span class="question-label">4. Where did he work before 2003?</span>
+                            <span class="question-label">4. In which year did he join the university?</span>
                             <ul class="option-list">
-                                <li><label><input type="radio" name="q4" value="correct"> Apple in Silicon Valley</label></li>
-                                <li><label><input type="radio" name="q4" value="wrong"> Microsoft in Seattle</label></li>
-                                <li><label><input type="radio" name="q4" value="wrong"> Sumitomo Electric</label></li>
+                                <li><label><input type="radio" name="q4" value="correct"> 2003</label></li>
+                                <li><label><input type="radio" name="q4" value="wrong"> 2013</label></li>
+                                <li><label><input type="radio" name="q4" value="wrong"> 1993</label></li>
                             </ul>
                         </div>
                         <div class="question-item">
@@ -413,13 +413,13 @@
             </div>
         </div>
 
-        <!-- ABA: WRITTEN PRACTICE (CORREÇÃO AUTOMÁTICA ADICIONADA) -->
+        <!-- ABA: WRITTEN PRACTICE -->
         <div id="written-content" class="tab-content">
             <div class="content-grid">
                 <aside class="sidebar">
                     <h2 class="section-header-title">Written Practice</h2>
                     <div class="box-info">
-                        <strong>Goal:</strong> Write full answers. Click "Check Correction" to see if you included the correct information.
+                        <strong>Goal:</strong> Write the answers based on the video. Click the button to correct.
                     </div>
                     <div class="video-wrapper">
                         <a href="https://www.youtube.com/watch?v=vIfu4eU9rQU" target="_blank" class="faux-player">
@@ -433,53 +433,53 @@
                     <div id="writtenForm">
                         <div class="written-question" data-answer="garr reynolds">
                             <label>1. What is the speaker's name?</label>
-                            <input type="text" id="w1">
+                            <input type="text">
                             <div class="suggestion">Answer: His name is Garr Reynolds.</div>
                         </div>
                         <div class="written-question" data-answer="professor">
                             <label>2. What is his specific job title at the university?</label>
-                            <input type="text" id="w2">
+                            <input type="text">
                             <div class="suggestion">Answer: He is a professor.</div>
                         </div>
-                        <div class="written-question" data-answer="apple microsoft amazon">
-                            <label>3. Name two or three famous companies he helps:</label>
-                            <input type="text" id="w3">
-                            <div class="suggestion">Answer: He helps Apple, Microsoft, and Amazon.</div>
-                        </div>
                         <div class="written-question" data-answer="five 5">
-                            <label>4. How many books has he written about presentations?</label>
-                            <input type="text" id="w4">
+                            <label>3. How many books has he written?</label>
+                            <input type="text">
                             <div class="suggestion">Answer: He has written five books.</div>
                         </div>
                         <div class="written-question" data-answer="2003">
-                            <label>5. In which year did he join Kansai Gaidai University?</label>
-                            <input type="text" id="w5">
+                            <label>4. In which year did he join Kansai Gaidai?</label>
+                            <input type="text">
                             <div class="suggestion">Answer: He joined in 2003.</div>
                         </div>
-                        <div class="written-question" data-answer="silicon valley">
-                            <label>6. Where was the Apple job he had before 2003?</label>
-                            <input type="text" id="w6">
-                            <div class="suggestion">Answer: It was in Silicon Valley.</div>
+                        <div class="written-question" data-answer="apple silicon valley">
+                            <label>5. Where did he work before joining the university?</label>
+                            <input type="text">
+                            <div class="suggestion">Answer: He worked for Apple in Silicon Valley.</div>
                         </div>
-                        <div class="written-question" data-answer="sumitomo electric industries">
-                            <label>7. What was the name of the company he worked for in Osaka?</label>
-                            <input type="text" id="w7">
-                            <div class="suggestion">Answer: Sumitomo Electric Industries.</div>
-                        </div>
-                        <div class="written-question" data-answer="two 2">
-                            <label>8. How many children does he have?</label>
-                            <input type="text" id="w8">
+                        <div class="written-question" data-answer="two 2 children">
+                            <label>6. How many children does he have?</label>
+                            <input type="text">
                             <div class="suggestion">Answer: He has two children.</div>
                         </div>
-                        <div class="written-question" data-answer="rugby american football hiking">
-                            <label>9. Mention two sports or activities he loves:</label>
-                            <input type="text" id="w9">
-                            <div class="suggestion">Answer: He loves hiking, rugby, and American football.</div>
+                        <div class="written-question" data-answer="hiking rugby football">
+                            <label>7. Mention two sports he likes:</label>
+                            <input type="text">
+                            <div class="suggestion">Answer: He likes hiking, rugby, and American football.</div>
                         </div>
-                        <div class="written-question" data-answer="piano guitar">
-                            <label>10. Besides the drums, what other instruments can he play?</label>
-                            <input type="text" id="w10">
-                            <div class="suggestion">Answer: He can play the piano and guitar.</div>
+                        <div class="written-question" data-answer="drummer drums">
+                            <label>8. What is his main role in music?</label>
+                            <input type="text">
+                            <div class="suggestion">Answer: He is a drummer.</div>
+                        </div>
+                        <div class="written-question" data-answer="piano guitar bass">
+                            <label>9. What other instruments can he play a little bit?</label>
+                            <input type="text">
+                            <div class="suggestion">Answer: He can play piano, bass, and guitar.</div>
+                        </div>
+                        <div class="written-question" data-answer="dog cat birds">
+                            <label>10. Which pets does he mention?</label>
+                            <input type="text">
+                            <div class="suggestion">Answer: He has a dog, a cat, and two birds.</div>
                         </div>
                         <button type="button" class="btn-action" onclick="checkWrittenPractice()">Check Correction</button>
                         <div id="written-result"></div>
@@ -488,13 +488,13 @@
             </div>
         </div>
 
-        <!-- ABA: SPEAKING PRACTICE -->
+        <!-- ABA: SPEAKING PRACTICE (EXPANDIDA - 10 PERGUNTAS) -->
         <div id="speaking-content" class="tab-content">
             <div class="content-grid">
                 <aside class="sidebar">
                     <h2 class="section-header-title">Speaking Session</h2>
                     <div class="box-info">
-                        <strong>Goal:</strong> Practice your speaking by answering these personal questions.
+                        <strong>Goal:</strong> Answer aloud! Use these cards to introduce yourself just like Garr did.
                     </div>
                     <div class="video-wrapper">
                         <a href="https://www.youtube.com/watch?v=vIfu4eU9rQU" target="_blank" class="faux-player">
@@ -505,21 +505,47 @@
                 </aside>
 
                 <main class="main-panel">
-                    <div class="speaking-card">
-                        <div class="icon">👤</div>
-                        <div class="question-text">What is your name and what do you do for a living?</div>
-                    </div>
-                    <div class="speaking-card">
-                        <div class="icon">💼</div>
-                        <div class="question-text">Tell me about your professional history. Where did you work before?</div>
-                    </div>
-                    <div class="speaking-card">
-                        <div class="icon">👨‍👩‍👧‍👦</div>
-                        <div class="question-text">Do you have a busy life? Do you have any children or pets?</div>
-                    </div>
-                    <div class="speaking-card">
-                        <div class="icon">🎾</div>
-                        <div class="question-text">What are your favorite hobbies? What do you like to do for fun?</div>
+                    <div class="speaking-container">
+                        <div class="speaking-card">
+                            <div class="icon">👤</div>
+                            <div class="question-text">1. What is your full name and where are you from?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">💼</div>
+                            <div class="question-text">2. What is your current job? What do you do?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">📜</div>
+                            <div class="question-text">3. Tell me about your professional background. Where did you work before?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">🗺️</div>
+                            <div class="question-text">4. Do you travel for work or just for fun? Which places do you know?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">📖</div>
+                            <div class="question-text">5. Have you ever written an article or a book? If not, what do you like to read?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">🐾</div>
+                            <div class="question-text">6. Do you have any pets? Tell me about them!</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">👨‍👩‍👦</div>
+                            <div class="question-text">7. Tell me about your family. Are you a busy person at home?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">⚽</div>
+                            <div class="question-text">8. What is your favorite sport to watch or play?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">🎸</div>
+                            <div class="question-text">9. Can you play any musical instruments? Which one is your favorite?</div>
+                        </div>
+                        <div class="speaking-card">
+                            <div class="icon">🚀</div>
+                            <div class="question-text">10. What are your plans for the next year in your career?</div>
+                        </div>
                     </div>
                 </main>
             </div>
@@ -527,7 +553,6 @@
     </div>
 
     <script>
-        // Sistema de Abas
         function changeTab(evt, tabId) {
             const contents = document.querySelectorAll('.tab-content');
             contents.forEach(c => c.classList.remove('active'));
@@ -538,13 +563,11 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Avaliação do Quiz
         function evaluateQuiz() {
             let score = 0;
             const total = 5;
             const form = document.getElementById('assessmentForm');
             const resultDisplay = document.getElementById('grade-result');
-
             const labels = form.querySelectorAll('label');
             labels.forEach(l => l.classList.remove('is-correct', 'is-wrong'));
 
@@ -556,18 +579,15 @@
                         picked.parentElement.classList.add('is-correct');
                     } else {
                         picked.parentElement.classList.add('is-wrong');
-                        const rightOne = form.querySelector(`input[name="q${i}"][value="correct"]`);
-                        if(rightOne) rightOne.parentElement.classList.add('is-correct');
+                        form.querySelector(`input[name="q${i}"][value="correct"]`).parentElement.classList.add('is-correct');
                     }
                 }
             }
-
             resultDisplay.style.display = 'block';
             resultDisplay.style.backgroundColor = score >= 4 ? '#f0fdf4' : '#fef2f2';
-            resultDisplay.innerHTML = `Quiz Score: ${score} out of ${total}`;
+            resultDisplay.innerHTML = `You scored ${score} out of ${total}!`;
         }
 
-        // CORREÇÃO DA ESCRITA
         function checkWrittenPractice() {
             const questions = document.querySelectorAll('.written-question');
             let correctCount = 0;
@@ -578,10 +598,9 @@
                 const keywords = q.getAttribute('data-answer').split(' ');
                 const suggestion = q.querySelector('.suggestion');
                 
-                // Verifica se pelo menos uma das palavras-chave está presente na frase do aluno
                 let found = keywords.some(k => val.includes(k));
                 
-                if (found && val.length > 2) {
+                if (found && val.length > 1) {
                     input.style.borderColor = 'var(--success-green)';
                     input.style.backgroundColor = '#f0fdf4';
                     suggestion.style.display = 'none';
@@ -596,8 +615,7 @@
             const resultDisplay = document.getElementById('written-result');
             resultDisplay.style.display = 'block';
             resultDisplay.style.backgroundColor = 'var(--azul-claro)';
-            resultDisplay.style.color = 'var(--azul-escuro)';
-            resultDisplay.innerHTML = `Completed! ${correctCount} of 10 answers include correct information. Review the suggestions in bronze.`;
+            resultDisplay.innerHTML = `Check! ${correctCount} of 10 answers included correct info. Review the bronze text.`;
         }
     </script>
 </body>
